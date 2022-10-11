@@ -16,3 +16,5 @@
 - defineProps声明组件属性的应用
 
 ## 相关资源
+- [Vue3 + vite + Ts + pinia + 实战 + 源码 +electron](https://www.bilibili.com/video/BV1dS4y1y7vd)
+
