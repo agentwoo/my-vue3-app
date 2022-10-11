@@ -17,4 +17,4 @@
 
 ## 相关资源
 - [Vue3 + vite + Ts + pinia + 实战 + 源码 +electron](https://www.bilibili.com/video/BV1dS4y1y7vd)
-
+- [推荐 12 个值得学习的 TypeScript 宝库！](https://mp.weixin.qq.com/s/4ZYNN3KZLsttCoJuXfKTvw)
