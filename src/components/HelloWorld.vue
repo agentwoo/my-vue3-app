@@ -1,38 +1,50 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, reactive, computed } from 'vue'
 
-defineProps<{ msg: string }>()
 
-const count = ref(0)
+// const msg = "hello"
+type TValue = string | number
+type TProps = {
+    msg: TValue
+}
+
+let value = 123 as TValue
+value = "abc"
+
+
+const my_num = ref(100)
+const m = reactive({ my_num: 200 })
+const totol$ = computed(() => my_num.value + m.my_num)
+const totolten$ = computed(() => totol$.value * 10)
+
+// defineProps<{
+//     msg: TValue
+// }>()
+
+defineProps<TProps>()
+
+
+
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
-  </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+    <div>
+        hello,{{msg}}
+    </div>
+    <div>
+        my_num:{{my_num}}<button @click="my_num++">+</button>
+    </div>
+    <div>
+        m.my_num:{{m.my_num}}<button @click="m.my_num++">+</button>
+    </div>
+    <div>
+        totol$:{{totol$}}
+    </div>
+    <div>
+        totolten$:{{totolten$}}
+    </div>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
+<style scoped lang="sass">
+
 </style>
