@@ -6,9 +6,44 @@
 // import studyWatchEffect from './components/day01/studyWatchEffect.vue'
 // import layout from './components/day01/layout/index.vue'
 // import StudyKeepAlive from './components/day03/StudyKeepAlive.vue'
-import StudyProvide from './components/day03/StudyProvide.vue'
+// import StudyProvide from './components/day03/StudyProvide.vue'
 
-const msg = "{{123}}"
+// const msg = "{{123}}"
+
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const toPage = (url: string) => {
+    // 字符串
+    // router.push(url)
+
+    //对象
+    // router.push({
+    //     path: url
+    // })
+
+    // router.replace({
+    //     path: url
+    // })
+
+    //命名式
+    router.push({
+        name: url
+    })
+
+    // router.replace({
+    //     name: url
+    // })
+}
+
+
+const next = () => {
+    router.go(1)
+}
+const back = () => {
+    router.back()
+}
+
 </script>
 
 <template>
@@ -21,25 +56,40 @@ const msg = "{{123}}"
     <div>hello,{{msg}}</div> -->
 
     <!-- <layout></layout> -->
-
     <!-- <StudyKeepAlive></StudyKeepAlive> -->
+    <!-- <StudyProvide></StudyProvide> -->
 
-    <StudyProvide></StudyProvide>
+
+
+    <!-- 默认路由跳转 -->
+    <!-- <router-link to="/">login</router-link><br>
+    <router-link to="/register">register</router-link> -->
+
+    <!-- 历史记录-replace -->
+    <!-- <router-link replace to="/">login</router-link><br>
+    <router-link replace to="/register">register</router-link> -->
+
+    <!-- 组件命名路由跳转 字符串-对象式-->
+    <!-- <router-link :to="{name:'Login'}">login</router-link><br>
+    <router-link :to="{name:'Register'}">register</router-link> -->
+
+    <!-- 编程式路由跳转-url -->
+    <!-- <button @click="toPage('/')">Login</button>
+    <button @click="toPage('/Register')" style="margin-left: 10px;">Register</button> -->
+
+    <!-- 编程式路由跳转-命名式 -->
+    <button @click="toPage('Shop')">Shop</button>
+    <button @click="toPage('Register')" style="margin-left: 10px;">Register</button>
+
+    <button @click="next()" style="margin-left: 10px;">next</button>
+    <button @click="back()" style="margin-left: 10px;">back</button>
+
+    <hr>
+    <router-view></router-view>
+
 
 </template>
 
 <style scoped>
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-}
 
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-    filter: drop-shadow(0 0 2em #42b883aa);
-}
 </style>

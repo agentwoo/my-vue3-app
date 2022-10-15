@@ -23,13 +23,19 @@
 ## day02
 - 全局组件、局部组件、递归组件的应用
 - 动态组件的应用
-- scope及sass的应用
+- scoped及scss的应用
 - ref搭配defineExpose的应用
 
 ## day03
 - kepp-alive缓存组件的应用
 - 依赖注入provide-inject
 - style中v-bind绑定样式
+
+## day04
+- 路由的搭建 [pnpm安装路由](https://www.jb51.cc/notes/3284230.html)
+- 编程式路由导航 [编程式路由](https://blog.csdn.net/qq1195566313/article/details/123589648)
+- 路由历史模式push、replace、go、back
+- 路由传参query：未完成
 
 ## 相关资源
 - [Vue3 + vite + Ts + pinia + 实战 + 源码 +electron](https://www.bilibili.com/video/BV1dS4y1y7vd)
