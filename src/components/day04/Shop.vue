@@ -28,7 +28,9 @@ type Item = {
 const toDetail = (item: Item) => {
     router.push({
         name: 'Detail',
-        params: item
+        params: {
+            id: item.id
+        }
     })
 }
 

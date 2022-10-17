@@ -1,14 +1,20 @@
 <script setup lang="ts">
 //详情页
+import { data } from './list.json'
+
 import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
-console.log(JSON.stringify(route.params))
+// console.log(JSON.stringify(route.params))
+
 const back = () => {
     router.back()
 }
 
+
+//需重新学习，find（）
+const item = data.find(v => v.id === Number(route.params.id))
 </script>
 <template>
     <div>
@@ -18,9 +24,9 @@ const back = () => {
     <div>价格：{{route.query.price}}</div>
     <div>ID：{{route.query.id}}</div> -->
 
-    <div>类目：{{route.params.name}}</div>
-    <div>价格：{{route.params.price}}</div>
-    <div>ID：{{route.params.id}}</div>
+    <div>类目：{{item?.name}}</div>
+    <div>价格：{{item?.price}}</div>
+    <div>ID：{{item?.id}}</div>
 
     <button @click="back">返回</button>
 </template>

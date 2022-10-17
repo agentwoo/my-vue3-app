@@ -44,6 +44,30 @@ const back = () => {
     router.back()
 }
 
+const toF = (url: string) => {
+    router.push({
+        name: url
+    })
+}
+
+const toFOne = (url: string) => {
+    router.push({
+        name: url
+    })
+}
+
+const toFamily = () => {
+    router.push({
+        path: '/tofamily'
+    })
+}
+
+const toTeleport = () => {
+    router.push({
+        path: '/teleport'
+    })
+}
+
 </script>
 
 <template>
@@ -84,6 +108,11 @@ const back = () => {
     <button @click="next()" style="margin-left: 10px;">next</button>
     <button @click="back()" style="margin-left: 10px;">back</button>
 
+    <button @click="toF('F')" style="margin-left: 10px;">test</button>
+
+    <button @click="toFOne('FOne')" style="margin-left: 10px;">嵌套路由</button>
+    <button @click="toFamily()" style="margin-left: 10px;">To全家桶</button>
+    <button @click="toTeleport()">Teleport</button>
     <hr>
     <router-view></router-view>
 

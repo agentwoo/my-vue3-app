@@ -35,8 +35,16 @@
 - 路由的搭建 [pnpm安装路由](https://www.jb51.cc/notes/3284230.html)
 - 编程式路由导航 [编程式路由](https://blog.csdn.net/qq1195566313/article/details/123589648)
 - 路由历史模式push、replace、go、back
-- 路由传参query：未完成
+- 路由传参query
+
+## day05
+- 嵌套路由 [嵌套路由注意点](https://blog.csdn.net/weixin_41967475/article/details/116868375)
+- teleport-瞬移组件 未完成
+- suspense-搭配插槽使用 未完成
+- toRef,toRefs,toRaw,markRaw [vue3之toRef、toRefs、toRaw](https://blog.csdn.net/weixin_43845137/article/details/123289934)
+
 
 ## 相关资源
 - [Vue3 + vite + Ts + pinia + 实战 + 源码 +electron](https://www.bilibili.com/video/BV1dS4y1y7vd)
 - [推荐 12 个值得学习的 TypeScript 宝库！](https://mp.weixin.qq.com/s/4ZYNN3KZLsttCoJuXfKTvw)
+- [vue3-learning](https://github.com/agentwoo/vue3-learning)
