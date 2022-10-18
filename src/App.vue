@@ -50,6 +50,18 @@ const toF = (url: string) => {
     })
 }
 
+const toLayout = () => {
+    router.push({
+        path: '/layout'
+    })
+}
+
+const toProvide = () => {
+    router.push({
+        path: '/provide'
+    })
+}
+
 const toFOne = (url: string) => {
     router.push({
         name: url
@@ -68,6 +80,17 @@ const toTeleport = () => {
     })
 }
 
+const toSlot = () => {
+    router.push({
+        path: '/slot'
+    })
+}
+
+const toSuspense = () => {
+    router.push({
+        path: '/suspense'
+    })
+}
 </script>
 
 <template>
@@ -103,16 +126,22 @@ const toTeleport = () => {
 
     <!-- 编程式路由跳转-命名式 -->
     <button @click="toPage('Shop')">Shop</button>
-    <button @click="toPage('Register')" style="margin-left: 10px;">Register</button>
+    <button @click="toPage('Register')">Register</button>
 
-    <button @click="next()" style="margin-left: 10px;">next</button>
-    <button @click="back()" style="margin-left: 10px;">back</button>
+    <button @click="next()">next</button>
+    <button @click="back()">back</button>
 
-    <button @click="toF('F')" style="margin-left: 10px;">test</button>
+    <button @click="toF('F')">test</button>
 
-    <button @click="toFOne('FOne')" style="margin-left: 10px;">嵌套路由</button>
-    <button @click="toFamily()" style="margin-left: 10px;">To全家桶</button>
+    <button @click="toLayout()">Layout</button>
+    <button @click="toProvide()">Provide</button>
+
+    <button @click="toFOne('FOne')">嵌套路由</button>
+    <button @click="toFamily()">To全家桶</button>
     <button @click="toTeleport()">Teleport</button>
+
+    <button @click="toSlot()">Slot</button>
+    <button @click="toSuspense()">Suspense</button>
     <hr>
     <router-view></router-view>
 
@@ -120,5 +149,8 @@ const toTeleport = () => {
 </template>
 
 <style scoped>
-
+button {
+    margin-left: 10px;
+    margin-top: 10px;
+}
 </style>

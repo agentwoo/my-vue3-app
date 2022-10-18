@@ -24,11 +24,11 @@
 - 全局组件、局部组件、递归组件的应用
 - 动态组件的应用
 - scoped及scss的应用
-- ref搭配defineExpose的应用
+- ref搭配defineExpose的应用[ref获取dom元素](https://blog.csdn.net/qq_40323256/article/details/127135956)
 
 ## day03
 - kepp-alive缓存组件的应用
-- 依赖注入provide-inject
+- 依赖注入provide-inject[provide和inject](https://blog.csdn.net/weixin_47450807/article/details/122925805)
 - style中v-bind绑定样式
 
 ## day04
@@ -39,10 +39,12 @@
 
 ## day05
 - 嵌套路由 [嵌套路由注意点](https://blog.csdn.net/weixin_41967475/article/details/116868375)
-- teleport-瞬移组件 未完成
-- suspense-搭配插槽使用 未完成
+- teleport-瞬移组件
 - toRef,toRefs,toRaw,markRaw [vue3之toRef、toRefs、toRaw](https://blog.csdn.net/weixin_43845137/article/details/123289934)
 
+## day06
+- slot-默认插槽、具名插槽、作用域插槽及动态插槽的使用 [vue3中插槽的使用](https://blog.csdn.net/ac1992122633/article/details/123855474)
+- suspense
 
 ## 相关资源
 - [Vue3 + vite + Ts + pinia + 实战 + 源码 +electron](https://www.bilibili.com/video/BV1dS4y1y7vd)

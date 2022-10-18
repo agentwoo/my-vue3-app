@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import { inject } from 'vue'
 import type { Ref } from 'vue'
-const color = inject<Ref<string>>('color')
+//把内部变成响应式
+// const color = inject<Ref<string>>('color')
+
+//非响应式
+let color = inject<string>('color', 'gray')
+const change = () => {
+    color = 'green'
+}
+
 </script>
 
 <template>
     <div>BBBBBBBB</div>
     <div class="box"></div>
+    <button @click="change()">点击</button>
 </template>
 
 <style scoped lang="scss">

@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import { ref, reactive, provide } from 'vue'
+import { ref, reactive, provide, readonly } from 'vue'
 import ProvideA from './ProvideA/index.vue'
 
 const colorVal = ref<string>('red')
 provide('color', colorVal)
+
+//设置为readonly，不允许子组件修改数据
+// provide('color',readonly(colorVal))
+
 </script>
 
 <template>

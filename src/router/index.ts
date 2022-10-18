@@ -62,6 +62,34 @@ const routes: Array<RouteRecordRaw> = [
         path: '/teleport',
         name: 'Teleport',
         component: () => import('../components/day05/StudyTeleport/StudyTeleport.vue')
+    },
+    {
+        path: '/provide',
+        name: 'Provide',
+        component: () => import('../components/day03/StudyProvide.vue')
+    },
+    {
+        path: '/layout',
+        name: 'Layout',
+        component: () => import('../components/day01/layout/index.vue')
+    },
+    {
+        path: '/slot',
+        name: 'Slot',
+        component: () => import('../components/day06/Slot/StudySlot.vue'),
+        children: [
+            {
+                // path: 'dslot',
+                path: '/slot/dslot',
+                name: 'DSlot',
+                component: () => import('../components/day06/Slot/DSlot.vue')
+            }
+        ]
+    },
+    {
+        path: '/suspense',
+        name: 'Suspense',
+        component: () => import('../components/day06/Suspense/StudySuspense.vue')
     }
 ]
 export const router = createRouter({

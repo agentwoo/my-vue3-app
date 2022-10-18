@@ -51,11 +51,11 @@ const data = reactive<TreeList[]>([
 
 
 //传给父组件
-// const list = reactive<number[]>([6, 6, 6])
-// const emit = defineEmits(['on-click'])
-// const clickSend = () => {
-//     emit('on-click', list)
-// }
+const list = reactive<number[]>([6, 6, 6])
+const emit = defineEmits(['on-click'])
+const clickSend = () => {
+    emit('on-click', list)
+}
 
 // const flag = ref(false)
 // //向外暴露
@@ -74,7 +74,7 @@ const getItem = (item: TreeList) => {
         <div>{{title}}</div>
         <!-- <div>{{arr}}</div> -->
 
-        <!-- <button @click="clickSend">点我发信息</button> -->
+        <button @click="clickSend">点我发信息</button>
 
         <Tree @on-click="getItem" :data="data"></Tree>
     </div>

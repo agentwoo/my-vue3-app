@@ -3,7 +3,9 @@ import { inject } from 'vue'
 import type { Ref } from 'vue'
 import ProvideB from '../ProvideB/index.vue'
 
-const color = inject<Ref<string>>('color')
+//为什么要用Ref包裹
+// const color = inject<Ref<string>>('color')
+const color = inject<string>('color', 'green')
 </script>
 
 <template>

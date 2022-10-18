@@ -7,7 +7,7 @@ import A from './A.vue'
     <div class="parent">
         <h1>我是父级teleport</h1>
         <Teleport :disabled="true" to="body">
-            <!-- 通过disable的值动态决定内部组件是否传走 -->
+            <!-- 通过disabled的值，控制A组件是否会传送到body的位置 -->
             <A></A>
         </Teleport>
     </div>
