@@ -90,6 +90,50 @@ const routes: Array<RouteRecordRaw> = [
         path: '/suspense',
         name: 'Suspense',
         component: () => import('../components/day06/Suspense/StudySuspense.vue')
+    },
+    {
+        path: '/transition',
+        name: 'Transition',
+        component: () => import('../components/day07/Transition/StudyTransition.vue'),
+        children: [
+            {
+                path: 'transition2',
+                name: 'Transition2',
+                component: () => import('../components/day07/Transition/Transition2.vue')
+            },
+            {
+                path: 'transition3',
+                name: 'Transition3',
+                component: () => import('../components/day07/Transition/Transition3.vue')
+            },
+            {
+                path: 'transition4',
+                name: 'Transition4',
+                component: () => import('../components/day07/Transition/Transition4.vue')
+            }
+        ]
+    },
+    {
+        path: '/eventBus',
+        name: 'EventBus',
+        component: () => import('../components/day07/EventBus/index.vue'),
+        children: [
+            {
+                path: 'eventBusDemo',
+                name: 'EventBusDemo',
+                component: () => import('../components/day07/EventBus/Demo/Demo.vue'),
+            },
+            {
+                path: 'bus',
+                name: 'Bus',
+                component: () => import('../components/day07/EventBus/Bus/StudyEventBus.vue'),
+            }
+        ]
+    },
+    {
+        path: '/vmodel',
+        name: 'Vmodel',
+        component: () => import('../components/day07/Vmodel/StudyVmodel.vue')
     }
 ]
 export const router = createRouter({

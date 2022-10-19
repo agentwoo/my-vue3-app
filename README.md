@@ -46,7 +46,14 @@
 - slot-默认插槽、具名插槽、作用域插槽及动态插槽的使用 [vue3中插槽的使用](https://blog.csdn.net/ac1992122633/article/details/123855474)
 - suspense
 
+
+# day07
+- transition、transition生命周期、transitionGroup [Vue3过渡](http://ww.qdxiaochuan.com/?id=563) [Animate样式库](https://animate.style/)
+- Mitt [事件总线](https://blog.csdn.net/qq_52013792/article/details/125803290)
+- 组件使用v-model
+
 ## 相关资源
 - [Vue3 + vite + Ts + pinia + 实战 + 源码 +electron](https://www.bilibili.com/video/BV1dS4y1y7vd)
 - [推荐 12 个值得学习的 TypeScript 宝库！](https://mp.weixin.qq.com/s/4ZYNN3KZLsttCoJuXfKTvw)
 - [vue3-learning](https://github.com/agentwoo/vue3-learning)
+- [typescript-learn](https://github.com/agentwoo/typescript-learn)

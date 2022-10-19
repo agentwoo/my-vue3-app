@@ -91,6 +91,24 @@ const toSuspense = () => {
         path: '/suspense'
     })
 }
+
+const toTransition = () => {
+    router.push({
+        path: '/transition'
+    })
+}
+
+const toEventBus = () => {
+    router.push({
+        path: '/eventBus'
+    })
+}
+
+const toVmodel = () => {
+    router.push({
+        path: '/vmodel'
+    })
+}
 </script>
 
 <template>
@@ -142,6 +160,10 @@ const toSuspense = () => {
 
     <button @click="toSlot()">Slot</button>
     <button @click="toSuspense()">Suspense</button>
+
+    <button @click="toTransition()">Transition</button>
+    <button @click="toEventBus()">EventBus</button>
+    <button @click="toVmodel()">V-model</button>
     <hr>
     <router-view></router-view>
 
