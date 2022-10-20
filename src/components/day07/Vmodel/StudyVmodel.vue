@@ -5,6 +5,7 @@ import { ref } from 'vue'
 
 const isShow = ref<boolean>(true)
 const text = ref<string>('HelloWorld')
+const text2 = ref<string>('123')
 
 </script>
 
@@ -12,9 +13,10 @@ const text = ref<string>('HelloWorld')
     <h3>我是父组件</h3>
     <div>{{isShow}}</div>
     <div>{{text}}</div>
+    <div>test:{{text2}}</div>
     <button @click="isShow = !isShow">开关</button>
     <hr>
-    <S v-model="isShow" v-model:textValue="text"></S>
+    <S v-model="isShow" v-model:textValue="text" v-model:textValue2="text2"></S>
 </template>
 
 <style scoped lang="scss">

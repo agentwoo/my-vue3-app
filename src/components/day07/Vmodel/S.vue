@@ -2,10 +2,11 @@
 
 defineProps<{
     modelValue: boolean,
-    textValue: string
+    textValue: string,
+    textValue2: string
 }>()
 
-const emit = defineEmits(['update:modelValue', 'update:textValue'])
+const emit = defineEmits(['update:modelValue', 'update:textValue', 'update:textValue2'])
 
 const close = () => {
     emit('update:modelValue')
@@ -16,6 +17,11 @@ const change = (e: Event) => {
     emit('update:textValue', target.value)
 }
 
+const change2 = (e: Event) => {
+    const target = e.target as HTMLInputElement
+    emit('update:textValue2', target.value)
+}
+
 </script>
 
 <template>
@@ -24,7 +30,8 @@ const change = (e: Event) => {
         {{modelValue}}
         <div class="B">
             <h3>我是v-model子组件dialong</h3>
-            内容：<input type="text" :value="textValue" @input="change">
+            内容：<input type="text" :value="textValue" @input="change"><br>
+            test:<input type="text" :value='textValue2' @input="change2" />
         </div>
     </div>
 </template>

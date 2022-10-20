@@ -134,6 +134,33 @@ const routes: Array<RouteRecordRaw> = [
         path: '/vmodel',
         name: 'Vmodel',
         component: () => import('../components/day07/Vmodel/StudyVmodel.vue')
+    },
+    {
+        path: '/pinia',
+        name: 'Pinia',
+        component: () => import('../components/day08/StudyStore.vue'),
+        children: [
+            {
+                path: 'jiegou',
+                name: 'Jiegou',
+                component: () => import('../components/day08/A.vue')
+            },
+            {
+                path: 'action',
+                name: 'Action',
+                component: () => import('../components/day08/Action.vue')
+            },
+            {
+                path: 'getters',
+                name: 'Getters',
+                component: () => import('../components/day08/Getters.vue')
+            },
+            {
+                path: 'api',
+                name: 'Api',
+                component: () => import('../components/day08/StoreApi.vue')
+            }
+        ]
     }
 ]
 export const router = createRouter({

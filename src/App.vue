@@ -109,6 +109,12 @@ const toVmodel = () => {
         path: '/vmodel'
     })
 }
+
+const toPinia = () => {
+    router.push({
+        path: '/pinia'
+    })
+}
 </script>
 
 <template>
@@ -164,6 +170,8 @@ const toVmodel = () => {
     <button @click="toTransition()">Transition</button>
     <button @click="toEventBus()">EventBus</button>
     <button @click="toVmodel()">V-model</button>
+
+    <button @click="toPinia()">Pinia</button>
     <hr>
     <router-view></router-view>
 
