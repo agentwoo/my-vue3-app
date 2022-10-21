@@ -38,7 +38,7 @@ let result: User = {
 }
 
 //Action中使用--同步调用
-export const useTestTwoStore = defineStore(Names.TESTTOW, {
+export const useTestTwoStore = defineStore(Names.TESTTWO, {
     state: () => {
         return {
             user: <User>{},

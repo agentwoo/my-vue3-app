@@ -1,6 +1,6 @@
 export const enum Names {
     TEST = 'TEST',
-    TESTTOW = 'TESTTOW',
+    TESTTWO = 'TESTTWO',
     TESTTHREE = 'TESTTHREE',
     TESTFOUR = 'TESTFOUR'
 }

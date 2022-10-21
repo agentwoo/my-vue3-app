@@ -115,6 +115,12 @@ const toPinia = () => {
         path: '/pinia'
     })
 }
+
+const toElementPlus = () => {
+    router.push({
+        path: '/elementPlus'
+    })
+}
 </script>
 
 <template>
@@ -172,6 +178,8 @@ const toPinia = () => {
     <button @click="toVmodel()">V-model</button>
 
     <button @click="toPinia()">Pinia</button>
+
+    <button @click="toElementPlus()">ElementPlus</button>
     <hr>
     <router-view></router-view>
 

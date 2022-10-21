@@ -7,6 +7,10 @@ import mitt from 'mitt'
 //引入pinia
 import { createPinia } from 'pinia'
 
+//引入elementPlus
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
 //引入Card组件,全局组件
 import Card from './components/day02/Card/index.vue'
 
@@ -22,6 +26,8 @@ app.component('Card', Card)
 app.use(router)
 
 app.use(store)
+
+app.use(ElementPlus)
 
 //声明并导出Mit
 declare module 'vue' {

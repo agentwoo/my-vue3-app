@@ -57,9 +57,14 @@
 - state、action、getters的使用
 - $patch、$reset、$subscribe、$onAction的使用
 
+# day09
+- 初识elementPlus
+- deep() :slotted() :global() [deep() :slotted() :global()](https://blog.csdn.net/xixihahakkyy/article/details/124942611)
+
 ## 相关资源
 - [Vue3 + vite + Ts + pinia + 实战 + 源码 +electron](https://www.bilibili.com/video/BV1dS4y1y7vd)
 - [推荐 12 个值得学习的 TypeScript 宝库！](https://mp.weixin.qq.com/s/4ZYNN3KZLsttCoJuXfKTvw)
 - [vue3-learning](https://github.com/agentwoo/vue3-learning)
 - [typescript-learn](https://github.com/agentwoo/typescript-learn)
 - [Pinia 中文文档](https://pinia.web3doc.top/introduction.html)
+- [Element Plus](https://element-plus.org/zh-CN/component/button.html)

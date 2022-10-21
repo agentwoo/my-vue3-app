@@ -161,6 +161,38 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import('../components/day08/StoreApi.vue')
             }
         ]
+    },
+    {
+        path: '/elementPlus',
+        name: 'ELementPlus',
+        component: () => import('../components/day09/StudyElementPlus.vue'),
+        children: [
+            {
+                path: 'a',
+                name: 'A',
+                component: () => import('../components/day09/A.vue')
+            },
+            {
+                path: 'b',
+                name: 'B',
+                component: () => import('../components/day09/B.vue')
+            },
+            {
+                path: 'slotCss',
+                name: 'SlotCss',
+                component: () => import('../components/day09/Style/SlotCss.vue')
+            },
+            {
+                path: 'cssModule',
+                name: 'CssModule',
+                component: () => import('../components/day09/Style/CssModule.vue')
+            },
+            {
+                path: 'test',
+                name: 'Test',
+                component: () => import('../components/day09/test/A.vue')
+            }
+        ]
     }
 ]
 export const router = createRouter({
