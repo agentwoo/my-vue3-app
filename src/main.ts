@@ -1,5 +1,5 @@
 import { createApp, useAttrs } from 'vue'
-import './style.css'
+import './style/index.css'
 import App from './App.vue'
 import { router } from './router/index'
 //引入全局事件总线mitt

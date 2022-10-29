@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { getRouter } from '../http/api'
 
 const routes: Array<RouteRecordRaw> = [
     {
-        path: '/',
+        path: '/shop',
         name: 'Shop',//给组件跳转的路由命名
         component: () => import('../components/day04/Shop.vue')
     },
@@ -40,10 +41,10 @@ const routes: Array<RouteRecordRaw> = [
                         name: 'Child1',
                         component: () => import('../components/day05/Router/Child1.vue')
                     },
-                    {
-                        path: '',//当路径为空时，组件Blank也会被渲染
-                        component: () => import('../components/day05/Router/Blank.vue')
-                    }
+                    // {
+                    //     path: '',//当路径为空时，组件Blank也会被渲染
+                    //     component: () => import('../components/day05/Router/Blank.vue')
+                    // }
                 ]
             },
             {
@@ -193,9 +194,94 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import('../components/day09/test/A.vue')
             }
         ]
+    },
+    {
+        path: '/loginView',
+        name: 'LoginView',
+        component: () => import('../components/Demo/LoginView.vue')
+    },
+    {
+        path: '/home',
+        name: 'Home',
+        component: () => import('../components/Demo/Home.vue'),
+        children: [
+            {
+                path: '',
+                name: 'Welecom',
+                component: () => import('../components/Demo/BlankView.vue')
+            },
+            {
+                path: 'order',
+                name: 'OrderView',
+                meta: {
+                    isShow: true,
+                    title: '订单列表'
+                },
+                component: () => import('../components/Demo/OrderView.vue')
+            },
+            {
+                path: 'user',
+                name: 'UserView',
+                meta: {
+                    isShow: true,
+                    title: '用户列表'
+                },
+                component: () => import('../components/Demo/UserView.vue')
+            },
+            {
+                path: 'role',
+                name: 'RoleView',
+                meta: {
+                    isShow: true,
+                    title: '角色列表'
+                },
+                component: () => import('../components/Demo/RoleView.vue'),
+            },
+            {
+                path: 'authority',
+                name: 'AuthorityView',
+                meta: {
+                    isShow: false,
+                    title: '权限列表'
+                },
+                component: () => import('../components/Demo/AuthorityView.vue')
+            }
+        ]
     }
 ]
+
+// const router = createRouter({
 export const router = createRouter({
     history: createWebHistory(),
     routes
-});
+})
+
+
+// import.meta.glob('../views/**/*.vue')
+
+//路由拦截
+// router.beforeEach(async (to) => {
+//     // 如果没有登录，则只能进入登录页面
+//     const token: (string | null) = localStorage.getItem('token')
+//     if (!token && to.path !== "/loginView") {
+//         return '/loginView'
+//     } else if (to.path !== 'loginView' && token) {
+//         if (router.getRoutes().length === 36) {
+//             // 添加动态路由
+//             let routerData: any = await getRouter()
+//             routerData = routerData.data
+//             routerData.forEach((v: any) => {
+//                 const routerObj: RouteRecordRaw = {
+//                     path: v.path,
+//                     name: v.name,
+//                     meta: v.meta,
+//                     component: () => import(`../views/${v.path}.vue`)
+//                 }
+//                 router.addRoute("home", routerObj)
+//             })
+//             router.replace(to.path)
+//         }
+//     }
+// })
+
+// export default router

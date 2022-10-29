@@ -121,6 +121,19 @@ const toElementPlus = () => {
         path: '/elementPlus'
     })
 }
+
+const toLoginView = () => {
+    router.push({
+        path: '/loginView'
+    })
+}
+
+const toHome = () => {
+    router.push({
+        path: '/home'
+    })
+}
+
 </script>
 
 <template>
@@ -180,6 +193,10 @@ const toElementPlus = () => {
     <button @click="toPinia()">Pinia</button>
 
     <button @click="toElementPlus()">ElementPlus</button>
+
+
+    <button @click="toLoginView()">登录</button>
+    <button @click="toHome()">首页</button>
     <hr>
     <router-view></router-view>
 
@@ -190,5 +207,12 @@ const toElementPlus = () => {
 button {
     margin-left: 10px;
     margin-top: 10px;
+}
+
+
+body,
+#app {
+    width: 0;
+    height: 0;
 }
 </style>
