@@ -61,6 +61,13 @@
 - 初识elementPlus
 - deep() :slotted() :global() [deep() :slotted() :global()](https://blog.csdn.net/xixihahakkyy/article/details/124942611)
 
+# Demo
+- 登录页面编写
+- 构建首页解构
+- 菜单列表--表格数据渲染、列表分页、列表筛选、删除用户
+- 用户列表--表格数据渲染、编辑用户信息
+- 角色列表--角色列表编写、权限页面编写、删除角色
+
 ## 相关资源
 - [Vue3 + vite + Ts + pinia + 实战 + 源码 +electron](https://www.bilibili.com/video/BV1dS4y1y7vd)
 - [推荐 12 个值得学习的 TypeScript 宝库！](https://mp.weixin.qq.com/s/4ZYNN3KZLsttCoJuXfKTvw)

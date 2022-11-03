@@ -79,6 +79,34 @@ const addRole = () => {
 
 //权限更改
 
+
+// 删除角色
+const delRole = (row: Tlist) => {
+    let listIndex = list.value.findIndex((v) => v.roleId === row.roleId)
+    list.value.splice(listIndex, 1)
+}
+
+//修改角色名称
+const updaRoleName = (row: Tlist) => {
+    ElMessageBox.prompt('请修改角色名', '修改', {
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+    })
+        .then(({ value }) => {
+            row.roleName = value
+            ElMessage({
+                type: 'success',
+                message: '修改成功',
+            })
+        })
+        .catch(() => {
+            ElMessage({
+                type: 'info',
+                message: '取消',
+            })
+        })
+}
+
 </script>
 <template>
     <div class="select-box">
@@ -105,6 +133,12 @@ const addRole = () => {
             <template #default="scope">
                 <el-button type="text" size="small" @click="authorityChange(scope.row)">
                     编辑权限
+                </el-button>
+                <el-button type="text" size="small" @click="delRole(scope.row)">
+                    删除
+                </el-button>
+                <el-button type="text" size="small" @click="updaRoleName(scope.row)">
+                    修改名称
                 </el-button>
             </template>
         </el-table-column>

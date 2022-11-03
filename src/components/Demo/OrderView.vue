@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue';
 import { getList } from '../../http/api';
+import { ElMessage, ElMessageBox } from 'element-plus'
 
 type TslectData = {
     title: string,
@@ -95,6 +96,59 @@ const onSubmit = () => {
     sliceList(arr)
 }
 
+
+
+// 删除所选用户
+const delOrder = (row: Tlist) => {
+    // 删除
+    let Lindex = list.value[selectData.value.page].findIndex(v => v.id === row.id)
+    list.value[selectData.value.page].splice(Lindex, 1)
+
+    // 变为一维数组
+    let newList = list.value.reduce(function (a: any, b: any) {
+        return a.concat(b)
+    })
+
+    // 修改列表总数
+    selectData.value.count -= 1
+    // 修改分页视图
+    sliceList(newList)
+}
+
+// 修改用户信息
+const ediOrderTitle = (row: Tlist) => {
+    ElMessageBox.prompt('请修改标题', '修改', {
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+    })
+        .then(({ value }) => {
+            row.title = value.trim()
+            ElMessage({
+                type: 'success',
+                message: '修改成功',
+            })
+        })
+        .catch(() => {
+            ElMessage({
+                type: 'info',
+                message: '取消',
+            })
+        })
+}
+
+// 修改
+const ediOrderBody = (row: Tlist) => {
+    let Lindex = list.value[selectData.value.page].findIndex(v => v.id === row.id)
+    let obj: Tlist = {
+        body: '1321323',
+        id: 9999,
+        title: "45465165131",
+        userId: 1
+    }
+    let arr = list.value[selectData.value.page].splice(Lindex, 1, obj)
+    console.log(arr);
+}
+
 </script>
 <template>
     <div class="select-box">
@@ -114,6 +168,27 @@ const onSubmit = () => {
         <el-table-column prop="id" label="ID" width="180" />
         <el-table-column prop="title" label="标题" width="180" />
         <el-table-column prop="body" label="详情" />
+
+        <el-table-column prop="id" label="删除" width="180">
+            <template #default="scope">
+                <el-button type="text" size="small" @click="delOrder(scope.row)">
+                    删除
+                </el-button>
+            </template>
+        </el-table-column>
+
+        <el-table-column prop="" label="修改" width="180">
+            <template #default="scope">
+                <el-button type="text" size="small" @click="ediOrderTitle(scope.row)">
+                    标题
+                </el-button>
+                <el-button type="text" size="small" @click="ediOrderBody(scope.row)">
+                    修改
+                </el-button>
+            </template>
+        </el-table-column>
+
+
     </el-table>
     <el-pagination layout="prev, pager, next" :total="selectData.count" @current-change="currentChange" />
 </template>
